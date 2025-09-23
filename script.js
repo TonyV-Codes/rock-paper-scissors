@@ -24,7 +24,7 @@ function playRound(humanChoice, computerChoice) {
       // Handle invalid human input
     if (humanChoice === 'invalid input') {
         console.log("Invalid input! Please choose rock, paper, or scissors.");
-        return; // stop the round
+        return;
     }
 
    if (humanChoice === computerChoice) {console.log('Its a tie!')}
@@ -59,4 +59,19 @@ playRound(humanSelection, computerSelection)
 console.log(computerScore)
 console.log(humanScore)
 
+function playGame() {
+   const humanSelection = getHumanChoice();
+   const computerSelection = getComputerchoice();
+   playRound(humanSelection, computerSelection);
+      console.log('You chose:', humanSelection);
+      console.log('Computer chose:', computerSelection);
+      console.log('Computer Score:' ,computerScore)
+      console.log('Your Score: ', humanScore)
+   if(computerScore === 5) { return ('Game Over,You Lose!')}
+   else if (humanScore=== 5 ) { return ('Winner Winner Chicken Dinner, You Win')}
+   else { 
+      return playGame() ;}
+}
+
+console.log(playGame())
 
